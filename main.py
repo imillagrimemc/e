@@ -5,9 +5,10 @@ import openai
 from googletrans import Translator
 import sqlite3
 
+
 logging.basicConfig(level=logging.INFO)
-chat_api = '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'
-bot = Bot(token="5818879075:AAFdw8v4cPKZqa4JykoLpXrloDj4EyfIwyo")
+chat_api = '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'
+bot = Bot(token="6051099724:AAGNVP-IbMm-5AAkJQ8_QJEXdhCHBdThoCw")
 dp = Dispatcher(bot)
 
 help_com = """
@@ -168,20 +169,6 @@ You entered an empty request!
         )
         response = completation.choices[0].text
         await message.reply(f"{response}")
-        user_id = message.chat.id
-        name = message.chat.username
-        first_name = message.chat.first_name
-        conn = sqlite3.connect('datas.db')
-        cursor = conn.cursor()
-        cursor.execute(
-            "CREATE TABLE IF NOT EXISTS datas (name TEXT, user_id TEXT, user TEXT, zap TEXT, otv)")
-        conn.close()
-        conn = sqlite3.connect('datas.db')
-        cursor = conn.cursor()
-        cursor.execute("INSERT INTO datas VALUES (?, ?, ?, ?, ?)",
-                       (user_id, first_name, name, arg, response))
-        conn.commit()
-        conn.close()
 
 
 if __name__ == "__main__":
