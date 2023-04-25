@@ -7,7 +7,7 @@ import sqlite3
 
 
 logging.basicConfig(level=logging.INFO)
-chat_api = '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'
+chat_api = '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'
 bot = Bot(token="6051099724:AAGNVP-IbMm-5AAkJQ8_QJEXdhCHBdThoCw")
 dp = Dispatcher(bot)
 
