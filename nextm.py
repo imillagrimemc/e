@@ -56,6 +56,7 @@ def start(message):
 Ты готов стать частью ART-HUB NEXT MARKET?
 """.format(
                              message.from_user), reply_markup=markup)
+        bot.register_next_step_handler(message, reg)
     else:
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         next = types.KeyboardButton("Далее")
