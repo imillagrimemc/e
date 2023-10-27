@@ -1,0 +1,17 @@
+def recognize_speech():
+    r = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Скажите что-нибудь:")
+        audio = r.listen(source)
+
+    try:
+        text = r.recognize_google(audio, language="ru-RU")
+        print("Вы сказали: " + text)
+    except sr.UnknownValueError:
+        print("Речь не распознана")
+    except sr.RequestError as e:
+        print("Ошибка при обращении к сервису распознавания речи: {0}".format(e))
+
+if __name__ == "__main__":
+    recognize_speech()
