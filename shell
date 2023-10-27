@@ -2,7 +2,8 @@
 Description=My Python Program
 
 [Service]
-ExecStart=/usr/bin/python3 /path/to/your_script.py
+Environment=PATH=/path/to/virtualenv/bin:%h/bin:%i/bin:%k/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/path/to/virtualenv/bin/python /path/to/your_script.py
 WorkingDirectory=/path/to/script_directory
 Restart=always
 User=YOUR_USER
