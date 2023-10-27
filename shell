@@ -1,0 +1,11 @@
+[Unit]
+Description=My Python Program
+
+[Service]
+ExecStart=/usr/bin/python3 /path/to/your_script.py
+WorkingDirectory=/path/to/script_directory
+Restart=always
+User=YOUR_USER
+
+[Install]
+WantedBy=multi-user.target
